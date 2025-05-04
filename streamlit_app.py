@@ -6,10 +6,6 @@ import xgboost as xgb
 
 # Load model and features
 model = joblib.load("xgb_model.pkl")
-
-day_low = st.number_input("Day Low") 
-day_high = st.number_input("Day High") 
-previous = st.number_input("Previous Close Price") 
 st.title("📈 XGBoost NSE Stock Price Predictor")
 
 # Input: select stock code
@@ -24,7 +20,7 @@ stock_code = st.selectbox("Select a Stock Code", options=['EGAD', 'KUKZ', 'KAPC'
  '^N10I', '^N20I', '^N25I', '^NASI', '^ZKEQTK', '^ZKEQTU', '^NBDI',
  'HFCK-R']
 )
-
+feaute_columns = ['Day Low', 'Day High', 'Previous']
 # Input: feature values
 st.subheader("Enter feature values:")
 input_data = {}
