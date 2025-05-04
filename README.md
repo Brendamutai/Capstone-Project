@@ -29,4 +29,7 @@ We explored the data using univariate, bivariate and multivariate analysis just 
 # 8. Feature Engineering
 We created new features to ensure our models perform better.
 
-# 9. 
+# 9. Modelling and model evaluation
+# 10. Conclusions and Recommendations
+# 11. Next Steps
+
