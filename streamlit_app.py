@@ -20,7 +20,7 @@ stock_code = st.selectbox("Select a Stock Code", options=['EGAD', 'KUKZ', 'KAPC'
  '^N10I', '^N20I', '^N25I', '^NASI', '^ZKEQTK', '^ZKEQTU', '^NBDI',
  'HFCK-R']
 )
-feaute_columns = ['Day Low', 'Day High', 'Previous']
+feature_columns = ['Day Low', 'Day High', 'Previous']
 # Input: feature values
 st.subheader("Enter feature values:")
 input_data = {}
