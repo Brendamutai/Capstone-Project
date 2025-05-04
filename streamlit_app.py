@@ -1,45 +1,38 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
 import joblib
+import xgboost as xgb
 
-# Load your trained XGBoost model
-model = joblib.load('xgb_model.pkl')
+# Load model and features
+model = joblib.load("xgb_model.pkl")
+feature_columns = joblib.load("xgb_features.pkl")  # e.g. list of feature names
+day_low = st.number_input("Day Low") 
+day_high = st.number_input("Day High") 
+previous = st.number_input("Previous Close Price") 
+st.title("📈 XGBoost NSE Stock Price Predictor")
 
-st.title("NSE Stock Price Prediction App")
-st.subheader("Enter technical indicators to predict the next 'Day Price'")
+# Input: select stock code
+stock_code = st.selectbox("Select a Stock Code", options=['EGAD', 'KUKZ', 'KAPC', 'LIMT', 'SASN', 'WTK', 'CGEN', 'ABSA',
+ 'BKG', 'COOP', 'DTK', 'EQTY', 'HFCK', 'IMH', 'KCB', 'NBK', 'NCBA',
+ 'SBIC', 'SCBK', 'DCON', 'EVRD', 'XPRS', 'HBE', 'KQ', 'LKL', 'NBV',
+ 'NMG', 'SMER', 'SGL', 'TPSE', 'UCHM', 'SCAN', 'ARM', 'BAMB',
+ 'CRWN', 'CABL', 'PORT', 'KEGN', 'KPLC-P4', 'KPLC-P7', 'KPLC',
+ 'TOTL', 'UMME', 'BRIT', 'CIC', 'JUB', 'KNRE', 'LBTY', 'SLAM',
+ 'CTUM', 'HAFR', 'KURV', 'OCH', 'TCL', 'NSE', 'BOC', 'BAT', 'CARB',
+ 'EABL', 'FTGH', 'ORCH', 'MSC', 'UNGA', 'SCOM', 'LAPR', 'GLD',
+ '^N10I', '^N20I', '^N25I', '^NASI', '^ZKEQTK', '^ZKEQTU', '^NBDI',
+ 'HFCK-R']
+)
 
-# User inputs for each feature
-low_12m = st.number_input("12-Month Low")
-high_12m = st.number_input("12-Month High")
-day_low = st.number_input("Day Low")
-day_high = st.number_input("Day High")
-previous = st.number_input("Previous Close Price")
-change = st.number_input("Price Change")
-change_pct = st.number_input("Change Percentage")
-volume = st.number_input("Volume")
-sma_10 = st.number_input("SMA 10")
-sma_50 = st.number_input("SMA 50")
-ema_10 = st.number_input("EMA 10")
-ema_50 = st.number_input("EMA 50")
-rsi = st.number_input("RSI")
+# Input: feature values
+st.subheader("Enter feature values:")
+input_data = {}
+for feature in feature_columns:
+    input_data[feature] = st.number_input(f"{feature}", value=0.0)
 
-# When user clicks 'Predict'
-if st.button("Predict Day Price"):
-    input_data = pd.DataFrame({
-        '12m Low': [low_12m],
-        '12m High': [high_12m],
-        'Day Low': [day_low],
-        'Day High': [day_high],
-        'Previous': [previous],
-        'Change': [change],
-        'Change%': [change_pct],
-        'Volume': [volume],
-        'SMA_10': [sma_10],
-        'SMA_50': [sma_50],
-        'EMA_10': [ema_10],
-        'EMA_50': [ema_50],
-        'RSI': [rsi]
-    })
-
-    prediction = model.predict(input_data)[0]
-    st.success(f"Predicted Day Price: {prediction:.2f}")
+# Predict button
+if st.button("Predict Price"):
+    input_df = pd.DataFrame([input_data])
+    prediction = model.predict(input_df)
+    st.success(f"Predicted Stock Price: {prediction[0]:.2f}")
