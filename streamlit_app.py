@@ -20,15 +20,22 @@ stock_code = st.selectbox("Select a Stock Code", options=['EGAD', 'KUKZ', 'KAPC'
  '^N10I', '^N20I', '^N25I', '^NASI', '^ZKEQTK', '^ZKEQTU', '^NBDI',
  'HFCK-R']
 )
-feature_columns = ['Day Low', 'Day High', 'Previous']
-# Input: feature values
-st.subheader("Enter feature values:")
-input_data = {}
-for feature in feature_columns:
-    input_data[feature] = st.number_input(f"{feature}", value=0.0)
 
-# Predict button
+
+# Create inputs for the 3 features
+day_high = st.number_input("Day High")
+day_low = st.number_input("Day Low")
+previous = st.number_input("Previous Close")
+
+# Prediction button
 if st.button("Predict Price"):
+    input_data = {
+        "Day high": day_high,
+        "Day low": day_low,
+        "Previous": previous
+    }
     input_df = pd.DataFrame([input_data])
     prediction = model.predict(input_df)
     st.success(f"Predicted Stock Price: {prediction[0]:.2f}")
+
+
