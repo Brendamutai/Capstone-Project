@@ -6,7 +6,7 @@ import xgboost as xgb
 
 # Load model and features
 model = joblib.load("xgb_model.pkl")
-feature_columns = joblib.load("xgb_features.pkl")  # e.g. list of feature names
+
 day_low = st.number_input("Day Low") 
 day_high = st.number_input("Day High") 
 previous = st.number_input("Previous Close Price") 
