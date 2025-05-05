@@ -18,7 +18,19 @@ Additionally, predictive models enable investors to understand market behavior b
 3. Portfolio Managers - Optimize asset allocation strategies.
 
 # 5. Data Understanding
-This data was sourced from![Mendely](https://data.mendeley.com/datasets/ss5pfw8xnk/2) and the key features include:
+This data was sourced from [Mendely](https://data.mendeley.com/datasets/ss5pfw8xnk/2) and the key features include:
+o	Date: Trading date (e.g., "03-Jan-2023").
+o	Code: Stock ticker symbol (e.g., "EGAD", "KUKZ").
+o	Name: Company or index name (e.g., "Eaagads Ltd", "NSE 25-Share Index").
+o	12m Low/High: 12-month lowest and highest prices.
+o	Day Low/High: Daily trading range.
+o	Day Price: Closing price for the day.
+o	Previous: Previous day's closing price (missing for some entries).
+o	Change/Change%: Absolute and percentage change from the previous day.
+o	Volume: Trading volume (some entries missing or zero).
+o	Adjusted Price: Not populated in the sample.
+o	Sector: Classification (e.g., "Agricultural").
+
 
 # 6. Data Cleaning
 We merged our two datasets, handled missing values and duplicates and standardized our data. This made sure that our data was good enough for further analysis.
@@ -29,7 +41,19 @@ We explored the data using univariate, bivariate and multivariate analysis just 
 # 8. Feature Engineering
 We created new features to ensure our models perform better.
 
-# 9. Modelling and model evaluation
-# 10. Conclusions and Recommendations
-# 11. Next Steps
+# 9. Modeling and model evaluation
+We trained different models.ie, ARIMA, XGboost and LSTM. We then deployed the best performimg model.
 
+# 10. Conclusions and Recommendations
+Based off of our findings, we reccomend:
+ 1.	Establishing a Retraining Strategy
+ 2.	Integrating with Risk Management
+ 3.	Monitoring Model Performance Continuously
+ 4.	Focus on high volume stocks
+ 5.	Incorporating Technical Indicators for Market Timing
+ 6.	Leveraging Real-Time Events for Improved Forecasting
+    
+# 11. Next Steps
+ 1.	Enhancing Feature Engineering and Integration
+ 2.	Expanding Data Utilization and Continuous Retraining
+ 3.	Improving Model Evaluation and Performance Monitoring
