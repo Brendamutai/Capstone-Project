@@ -1,5 +1,5 @@
 # NSE TIME SERIES ANALYSIS
-![stock prediction](https://www.google.com/imgres?q=stock%20predictions&imgurl=https%3A%2F%2Fmiro.medium.com%2Fv2%2Fresize%3Afit%3A2000%2F1*hhq3ybwbyA3p0dWuLFtLMQ.jpeg&imgrefurl=https%3A%2F%2Fmedium.com%2Fanalytics-vidhya%2Fquick-guide-for-stock-price-prediction-d6624eb29248&docid=ge6gubWE6w9-3M&tbnid=yLz66NiG6yIA8M&vet=12ahUKEwift-zmhIuNAxWtVaQEHcOOGQkQM3oFCIMBEAA..i&w=2000&h=1050&hcb=2&ved=2ahUKEwift-zmhIuNAxWtVaQEHcOOGQkQM3oFCIMBEAA.jpg)
+[stock prediction](https://www.google.com/imgres?q=stock%20predictions&imgurl=https%3A%2F%2Fmiro.medium.com%2Fv2%2Fresize%3Afit%3A2000%2F1*hhq3ybwbyA3p0dWuLFtLMQ.jpeg&imgrefurl=https%3A%2F%2Fmedium.com%2Fanalytics-vidhya%2Fquick-guide-for-stock-price-prediction-d6624eb29248&docid=ge6gubWE6w9-3M&tbnid=yLz66NiG6yIA8M&vet=12ahUKEwift-zmhIuNAxWtVaQEHcOOGQkQM3oFCIMBEAA..i&w=2000&h=1050&hcb=2&ved=2ahUKEwift-zmhIuNAxWtVaQEHcOOGQkQM3oFCIMBEAA.jpg)
 
 ### Group Members
 1. Brenda Mutai
