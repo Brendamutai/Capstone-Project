@@ -19,16 +19,27 @@ Additionally, predictive models enable investors to understand market behavior b
 
 # 5. Data Understanding
 This data was sourced from [Mendely](https://data.mendeley.com/datasets/ss5pfw8xnk/2) and the key features include:
+
 o	Date: Trading date (e.g., "03-Jan-2023").
+
 o	Code: Stock ticker symbol (e.g., "EGAD", "KUKZ").
+
 o	Name: Company or index name (e.g., "Eaagads Ltd", "NSE 25-Share Index").
+
 o	12m Low/High: 12-month lowest and highest prices.
+
 o	Day Low/High: Daily trading range.
+
 o	Day Price: Closing price for the day.
+
 o	Previous: Previous day's closing price (missing for some entries).
+
 o	Change/Change%: Absolute and percentage change from the previous day.
+
 o	Volume: Trading volume (some entries missing or zero).
+
 o	Adjusted Price: Not populated in the sample.
+
 o	Sector: Classification (e.g., "Agricultural").
 
 
