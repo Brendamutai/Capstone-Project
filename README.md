@@ -1,12 +1,12 @@
 # NSE TIME SERIES ANALYSIS
-![stock prediction](https://www.google.com/imgres?q=stock%20predictions&imgurl=https%3A%2F%2Fmiro.medium.com%2Fv2%2Fresize%3Afit%3A2000%2F1*hhq3ybwbyA3p0dWuLFtLMQ.jpeg&imgrefurl=https%3A%2F%2Fmedium.com%2Fanalytics-vidhya%2Fquick-guide-for-stock-price-prediction-d6624eb29248&docid=ge6gubWE6w9-3M&tbnid=yLz66NiG6yIA8M&vet=12ahUKEwift-zmhIuNAxWtVaQEHcOOGQkQM3oFCIMBEAA..i&w=2000&h=1050&hcb=2&ved=2ahUKEwift-zmhIuNAxWtVaQEHcOOGQkQM3oFCIMBEAA)
+![stock prediction](https://www.google.com/imgres?q=stock%20predictions&imgurl=https%3A%2F%2Fmiro.medium.com%2Fv2%2Fresize%3Afit%3A2000%2F1*hhq3ybwbyA3p0dWuLFtLMQ.jpeg&imgrefurl=https%3A%2F%2Fmedium.com%2Fanalytics-vidhya%2Fquick-guide-for-stock-price-prediction-d6624eb29248&docid=ge6gubWE6w9-3M&tbnid=yLz66NiG6yIA8M&vet=12ahUKEwift-zmhIuNAxWtVaQEHcOOGQkQM3oFCIMBEAA..i&w=2000&h=1050&hcb=2&ved=2ahUKEwift-zmhIuNAxWtVaQEHcOOGQkQM3oFCIMBEAA.png)
 
 ### Group Members
 1. Brenda Mutai
 2. Sharon Momanyi
 3. Stephen Munyiala
 4. Justin Mbugua
-5. 
+   
 # 1. Project Overview
 
 This project focuses on analyzing stock price movements across all publicly listed companies on the Nairobi Securities Exchange (NSE) over the years 2023 and 2024.Using daily trading data — including prices, trading volume, Sector information — the project aims to provide actionable insights into market trends, stock performance, sector dynamics, and trading patterns. The analysis aims to help investors, analysts, and researchers better understand market behavior and identify opportunities within the Kenyan stock market.# Business Understanding.
