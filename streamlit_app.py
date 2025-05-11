@@ -8,9 +8,9 @@ import joblib
 import plotly.express as px
 
 # Load feature data
-DATA_PATH = 'nse_features.csv'
+DATA_PATH = 'nse_data.csv'
 df = pd.read_csv(DATA_PATH)
-stocks = df['Code'].unique()
+stocks = df['code'].unique()
 
 # Streamlit UI
 st.title("📈 NSE Stock Price Predictor")
@@ -18,19 +18,19 @@ st.title("📈 NSE Stock Price Predictor")
 selected_stock = st.selectbox("Choose a stock ticker:", sorted(stocks))
 
 # Filter and sort data
-stock_data = df[df['Code'] == selected_stock].copy()
-stock_data['Date'] = pd.to_datetime(stock_data['Date'], errors='coerce')
-stock_data = stock_data.sort_values(by='Date')
+stock_data = df[df['code'] == selected_stock].copy()
+stock_data['date'] = pd.to_datetime(stock_data['date'], errors='coerce')
+stock_data = stock_data.sort_values(by='date')
 
 # Define cutoff date
 N_DAYS = 30
-latest_date = stock_data['Date'].max()
+latest_date = stock_data['date'].max()
 cutoff_date = latest_date - pd.Timedelta(days = N_DAYS)
 
 # Filter for last N days and aggregate by date
 trend_data = (
-    stock_data[stock_data['Date'] >= cutoff_date]
-    .groupby('Date', as_index=False)['Day Price']
+    stock_data[stock_data['date'] >= cutoff_date]
+    .groupby('date', as_index=False)['day_price']
     .mean()  # handles multiple entries per date
 )
 
@@ -42,19 +42,19 @@ with tab1:
     st.subheader(f"{selected_stock} - Interactive Price Trend")
 
     # Slider to choose number of days
-    max_days = (stock_data['Date'].max() - stock_data['Date'].min()).days
+    max_days = (stock_data['date'].max() - stock_data['date'].min()).days
     N_DAYS = st.slider("Select how many past days to show", min_value = 7, max_value = max(30, max_days), value = 30)
 
     # Filter trend data
-    latest_date = stock_data['Date'].max()
+    latest_date = stock_data['date'].max()
     cutoff_date = latest_date - pd.Timedelta(days = N_DAYS)
-    trend_data = stock_data[stock_data['Date'] >= cutoff_date][['Date', 'Day Price']].dropna()
+    trend_data = stock_data[stock_data['date'] >= cutoff_date][['date', 'day_price']].dropna()
 
     if not trend_data.empty:
         fig = px.line(
             trend_data,
-            x = 'Date',
-            y = 'Day Price',
+            x = 'date',
+            y = 'day_price',
             title=f'{selected_stock} Price Trend (Last {N_DAYS} Days)',
             markers=True
         )
@@ -92,8 +92,7 @@ with tab2:
             scaler = joblib.load(scaler_path)
 
             # Prepare features
-            features = ['12m Low', '12m High', 'Day Low', 'Day High', 'Previous',
-                        'Change', 'Change%', 'Volume', 'SMA_10', 'SMA_50', 'EMA_10', 'EMA_50', 'RSI']
+            features = ['12m_low', '12m_high', 'day_low', 'day_high', 'previous', 'change', 'change%', 'volume', 'SMA_10', 'SMA_50', 'EMA_10', 'EMA_50', 'RSI']
             latest_data = stock_data[-10:]
 
             if len(latest_data) < 10:
