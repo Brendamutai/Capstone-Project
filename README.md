@@ -1,5 +1,5 @@
 # NSE TIME SERIES ANALYSIS
-<img src="https://github.com/user-attachments/assets/e3da546d-bfe1-403b-822e-d342b68eaff5" alt="Chart" width+"600"/>
+                        ![image](https://github.com/user-attachments/assets/9090973b-4519-4557-8ffe-e6a6c0f3e3b4)
 
 ### Group Members
 1. Brenda Mutai
