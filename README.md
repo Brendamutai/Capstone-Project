@@ -72,6 +72,11 @@ These indicators help smooth out price fluctuations and identify overall market 
 # 9. Modeling and model evaluation
 We trained different models.ie, SARIMA, XGboost and LSTM. We then deployed the best performimg model.
 ![image](https://github.com/Brendamutai/Capstone-Project/blob/main/model%20evaluation.JPG)
+Based on the evaluated metrics (MAE, MSE, and RMSE), the XGBoost model significantly outperforms both the SARIMA and LSTM models. It consistently achieves the lowest error values across all three metrics.
+
+The SARIMA model performs better than the LSTM model but is not as effective as XGBoost according to these results.
+
+The LSTM model appears to have performed poorly in this specific evaluation, exhibiting substantially higher errors (especially MSE and RMSE) compared to the other two models.
 # 10. Conclusions 
 - The XGBoost model clearly outperforms both the SARIMA and LSTM models. It consistently records the lowest error values across all three measures, indicating superior predictive accuracy and robustness. This suggests that XGBoost is particularly effective at capturing complex patterns in the data.
 
